@@ -157,7 +157,7 @@ function niktNieKliknal()
 	document.getElementById("gracz2").style.filter= "brightness(40%)";
 	document.getElementById("gracz3").style.filter= "brightness(40%)";
 	document.getElementById("gracz4").style.filter= "brightness(40%)";
-	document.getElementById("gracz4").style.filter= "brightness(40%)";
+	document.getElementById("gracz5").style.filter= "brightness(40%)";
 	zbanowanyGracz = null;
 	
 	pozostalyCzas=5
