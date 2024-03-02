@@ -14,7 +14,7 @@ var ktoKliknal = 0;
 var numerRundy = 1;
 var zbanowanyGracz = null;
 
-var gotowka = new Array(0,0,0,0);
+var gotowka = new Array(0,0,0,0,0);
 
 onkeydown = sprawdzanieKlawisza;
 
@@ -28,6 +28,7 @@ function sprawdzanieKlawisza(przycisk)
 		if((wcisnietyKlawisz == "c" || wcisnietyKlawisz == "C") && zbanowanyGracz != 2)	ktosKliknal("2");
 		if((wcisnietyKlawisz == "m" || wcisnietyKlawisz == "M") && zbanowanyGracz != 3)	ktosKliknal("3");
 		if((wcisnietyKlawisz == "p" || wcisnietyKlawisz == "P") && zbanowanyGracz != 4)	ktosKliknal("4");
+		if((wcisnietyKlawisz == "\" || wcisnietyKlawisz == "|") && zbanowanyGracz != 5)	ktosKliknal("5");
 	}	
 }
 
@@ -41,7 +42,7 @@ function odliczaniePosrednie()
 
 function odliczanie()
 {
-	for (i=1; i<=4; i++) document.getElementById("money"+i).innerHTML = "$" + gotowka[i-1];
+	for (i=1; i<=5; i++) document.getElementById("money"+i).innerHTML = "$" + gotowka[i-1];
 	
 	
 	
@@ -49,6 +50,7 @@ function odliczanie()
 	document.getElementById("gracz2").style.filter= "brightness(100%)";
 	document.getElementById("gracz3").style.filter= "brightness(100%)";
 	document.getElementById("gracz4").style.filter= "brightness(100%)";
+	document.getElementById("gracz5").style.filter= "brightness(100%)";
 
 	if(zbanowanyGracz != null) {
 			document.getElementById(`gracz${zbanowanyGracz}`).style.filter= "brightness(50%)";
@@ -102,7 +104,7 @@ function odliczanie()
 	}
 	
 	pozostalyCzas--;
-	if (gotowka[0]>=10000 || gotowka[1]>=10000 || gotowka[2]>=10000 || gotowka [3]>=10000) setTimeout("koniecGry()",3500);
+	if (gotowka[0]>=10000 || gotowka[1]>=10000 || gotowka[2]>=10000 || gotowka [3]>=10000 || gotowka [4]>=10000) setTimeout("koniecGry()",3500);
 	else if (pozostalyCzas > -1) setTimeout("odliczanie()",1000);
 
 }
@@ -155,7 +157,7 @@ function niktNieKliknal()
 	document.getElementById("gracz2").style.filter= "brightness(40%)";
 	document.getElementById("gracz3").style.filter= "brightness(40%)";
 	document.getElementById("gracz4").style.filter= "brightness(40%)";
-		
+	document.getElementById("gracz4").style.filter= "brightness(40%)";
 	zbanowanyGracz = null;
 	
 	pozostalyCzas=5
@@ -220,6 +222,7 @@ function ktosKliknal(ktoKliknalLokalne)
 		document.getElementById("gracz2").style.filter= "brightness(40%)";
 		document.getElementById("gracz3").style.filter= "brightness(40%)";
 		document.getElementById("gracz4").style.filter= "brightness(40%)";
+		document.getElementById("gracz5").style.filter= "brightness(40%)";
 		
 		document.getElementById("gracz" + ktoKliknal).style.filter= "brightness(170%)";
 		document.getElementById("napisy").innerHTML = "$" + pieniadze;
@@ -255,14 +258,14 @@ function odpowiedzialDobrze()
 	document.getElementById("zatwierdzaniePytanie").style.top="50px";
 	document.getElementById("zatwierdzaniePytanie").style.width="600px";		
 	document.getElementById("zatwierdzaniePytanie").innerHTML = "Runda " + numerRundy + " dobiegła końca. Gracz " + ktoKliknal + " otrzymuje $" + pieniadze;
-	if (gotowka[0]<10000 && gotowka[1]<10000 && gotowka[2]<10000 && gotowka [3]<10000) 
+	if (gotowka[0]<10000 && gotowka[1]<10000 && gotowka[2]<10000 && gotowka [3]<10000 && gotowka [4]<10000) 
 		
 		{
 			odliczanie()
 			setTimeout("zamknijPowiadomienie()",3500);
 		}
 
-	if (gotowka[0]>=10000 || gotowka[1]>=10000 || gotowka[2]>=10000 || gotowka [3]>=10000) setTimeout("koniecGry()",3500);
+	if (gotowka[0]>=10000 || gotowka[1]>=10000 || gotowka[2]>=10000 || gotowka [3]>=10000 || gotowka [3]>=10000) setTimeout("koniecGry()",3500);
 
 	document.getElementById("zatwierdzanieNie").style.visibility="hidden";
 	document.getElementById("zatwierdzanieTak").style.visibility="hidden";
