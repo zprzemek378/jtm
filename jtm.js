@@ -28,7 +28,7 @@ function sprawdzanieKlawisza(przycisk)
 		if((wcisnietyKlawisz == "c" || wcisnietyKlawisz == "C") && zbanowanyGracz != 2)	ktosKliknal("2");
 		if((wcisnietyKlawisz == "m" || wcisnietyKlawisz == "M") && zbanowanyGracz != 3)	ktosKliknal("3");
 		if((wcisnietyKlawisz == "p" || wcisnietyKlawisz == "P") && zbanowanyGracz != 4)	ktosKliknal("4");
-		if((wcisnietyKlawisz == "\" || wcisnietyKlawisz == "|") && zbanowanyGracz != 5)	ktosKliknal("5");
+		if((wcisnietyKlawisz == "\\" || wcisnietyKlawisz == "|") && zbanowanyGracz != 5)	ktosKliknal("5");
 	}	
 }
 
