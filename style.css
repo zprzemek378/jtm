@@ -160,10 +160,11 @@ body
 	color: white;
 }
 
-#gracz1,#gracz2,#gracz3,#gracz4
+#gracz1,#gracz2,#gracz3,#gracz4, #gracz5
 {
 	float:left;
 	position: relative;
+	width: 17%;
 }
 
 
